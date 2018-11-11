@@ -135,6 +135,9 @@ bool HelloWorld::init()
     glprogramstate->applyUniforms();
     grossini->setGLProgramState(glprogramstate);
     
+    auto glprogram1 = GLProgram::createWithFilenames("shaders/generic.vert", "shaders/game.frag");
+    auto glprogramstate1 = GLProgramState::getOrCreateWithGLProgram(glprogram1);
+    grossinis_sister1->setGLProgramState(glprogramstate);
     return true;
 }
 
